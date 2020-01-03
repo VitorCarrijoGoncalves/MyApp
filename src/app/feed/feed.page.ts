@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedPage implements OnInit {
 
+  public nomeUsuario = 'Vitor Carrijo Gonçalves';
+
   constructor() { }
+
+  public somaDoisNumeros(num1: number, num2: number): void {
+    alert(num1 + num2);
+  }
 
   ngOnInit() {
   }
