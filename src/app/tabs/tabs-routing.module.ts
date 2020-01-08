@@ -17,13 +17,33 @@ const routes: Routes = [
           }
         ]
       },
+      // {
+      //   path: 'tab2',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: () =>
+      //         import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+      //     }
+      //   ]
+      // },
+      // {
+      //   path: 'tab3',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: () =>
+      //         import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+      //     }
+      //   ]
+      // },
       {
         path: 'tab2',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../feed/feed.module').then(m => m.FeedPageModule)
           }
         ]
       },
@@ -33,17 +53,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-          }
-        ]
-      },
-      {
-        path: 'tab4',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../feed/feed.module').then(m => m.FeedPageModule)
+              import('../intro/intro.module').then(m => m.IntroPageModule)
           }
         ]
       },
