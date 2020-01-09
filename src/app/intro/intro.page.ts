@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TabsPage } from '../tabs/tabs.page';
+import { NavController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-intro',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    // public navCtrl: NavController,
+    // public navParams: NavParams
+  ) { }
 
   ngOnInit() {
   }
+
+  // goToTabsPage() {
+  //   this.navCtrl.push(TabsPage);
+  // }
 
 }
