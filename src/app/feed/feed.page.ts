@@ -20,6 +20,8 @@ export class FeedPage implements OnInit {
     timeComment: '11h ago'
   };
 
+  public listaFilmes = new Array<any>();
+
   public nomeUsuario = 'Vitor Carrijo Gonçalves';
 
   constructor(
@@ -33,6 +35,7 @@ export class FeedPage implements OnInit {
       data => {
         const response = (data as any);
         const objetoRetorno = JSON.parse(response._body);
+        this.listaFilmes = objetoRetorno.results;
         console.log(objetoRetorno);
       }, error => {
         console.log(error);

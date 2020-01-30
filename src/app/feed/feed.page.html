@@ -6,12 +6,12 @@
 
 <ion-content>
 
-  <ion-card>
+  <ion-card *ngFor="let filme of listaFilmes">
     <ion-card-header>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       <ion-card-title>Card Title</ion-card-title>
-      <h2 class="feed_title">{{ objetoFeed.titulo }}</h2>
-      <p class="feed_date">{{ objetoFeed.data }}</p>
+      <h2 class="feed_title">{{ filme.original_title }}</h2>
+      <p class="feed_date">{{ filme.release_date }}</p>
     </ion-card-header>
 
     <ion-card-content>
@@ -77,7 +77,8 @@
   <ion-list>
     <ion-item *ngFor="let item of items">
       <ion-thumbnail slot="start">
-        <ion-img [src]="assets/images/teste.png"></ion-img>
+        <!--<ion-img [src]="assets/images/teste.png"></ion-img>-->
+        <ion-img [src]="'https://image.tmdb.org.t/p/w500/' + {{filme.backdrop_path}}"></ion-img>
       </ion-thumbnail>
       <ion-label>{{item.text}}</ion-label>
     </ion-item>
