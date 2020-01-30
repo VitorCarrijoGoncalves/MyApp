@@ -1,9 +1,13 @@
+import { MovieService } from './../services/movie/movie.service';
 import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.page.html',
-  styleUrls: ['./feed.page.scss'],
+  providers: [
+    MovieService
+  ]
 })
 export class FeedPage implements OnInit {
 
@@ -18,13 +22,22 @@ export class FeedPage implements OnInit {
 
   public nomeUsuario = 'Vitor Carrijo Gonçalves';
 
-  constructor() { }
-
-  public somaDoisNumeros(num1: number, num2: number): void {
-    alert(num1 + num2);
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private movieService: MovieService
+  ) { }
 
   ngOnInit() {
+    this.movieService.getLatestMovies().subscribe(
+      data => {
+        const response = (data as any);
+        const objetoRetorno = JSON.parse(response._body);
+        console.log(objetoRetorno);
+      }, error => {
+        console.log(error);
+      }
+    );
   }
 
 }
